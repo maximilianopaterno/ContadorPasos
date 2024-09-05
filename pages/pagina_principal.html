@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Principal | Steps</title>
+    <link rel="shortcut icon" href="../img/icono.webp" sizes="16x16">
+    <!-- Boostrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- CSS only -->
+    <link rel="stylesheet" href="../css/s.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <header id="header">
+            <article id="login">
+                <!-- Login Boton Cerrar Sesion-->  
+                <button type="button" class="btn btn-secondary" id="cerrarsesion"> Cerrar Sesion</button>
+                <!-- Fin Login Boton Cerrar Sesion-->
+            </article>
+        </header>
+        <main>
+            <!-- Inicio Class Caminar la cual contiene los parrafos y el boton de "Calculadora de Pasos"-->
+            <div class="caminar">
+                <h3 class="titulo">Caminar</h3>
+                <p>
+                    Es una manera sencilla de hacer ejercicio físico de forma habitual con grandes beneficios para diferentes aspectos de nuestra salud, 
+                    incluyendo la pérdida de peso en aquellas personas en las que esté médicamente aconsejado.
+                </p>
+                <br>
+                <h3>Calculando calorías y pasos diarios</h3>
+                <p>
+                    Respecto a la distancia que se debe caminar diariamente existen diferentes opiniones, pero a menudo se suele apuntar a la recomendación que hace al respecto el CDC estadounidense: 10.000 pasos al día. 
+                    Teniendo en cuenta que, según datos del mismo organismo,
+                    una persona da de media unos 2.000 pasos en un kilómetro y medio, esto implicaría que deberíamos tratar de andar unos 7,5 kilómetros.
+                    Esta recomendación, en principio, se basa más en los beneficios que tiene la práctica de caminar sobre el sistema cardiovascular que en la pérdida de peso en sí misma. Sin embargo, como decíamos,
+                    caminar también puede ser una gran alternativa para aquellas personas que necesiten perder peso.
+                </p>
+                <br>
+                <!-- Inicio Seccion de calculos-->
+                <section id="principal">
+                    <!-- Inicio de calculos de pasos-->
+                    <article id="opcion_pasos">
+                        <button id="pasos" class="btn btn-primary "> Calculadora de pasos diarios</button>
+                        <div id="formulariopasos" style="display: none;"><br>
+                            <label class="label_kilometros" for="kilometros">Cuántos kilometros realizaste hoy?</label>
+                                <input type="number" id="kilometros" name="kilometros" min="0" style="width: 35px;" placeholder="0" placeholder="100" oninput="validarKm: 
+                                if (this.value > 100 || this.value < 0) this.value = this.value.slice(0, this.value.length - 1);
+                                if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); "maxlength="3" required><br>
+                            <br>
+                            <button class="btn btn-outline-warning" style="float: right;" id="calcular">Calcular pasos</button>
+                            <h3 id="calculoDePasos" style="display: none;">Calculo de Pasos</h3>
+                        </div>
+                    </article>
+                </section>   
+                <!-- FIn de calculos de pasos-->
+            </div>
+            <!-- Fin Class Caminar la cual contiene los parrafos y el boton de "Calculadora de Pasos"-->
+            <br>
+            <!-- Inicio Class Calculo de masa corporal la cual contiene los parrafos y el boton de "Calculadora de Indice de masa corporal"-->
+            <div class="calculomasacorpoal">
+                <h3>Calculador de indice de masa corporal (IMC)</h3>
+                <p>
+                    El Índice de Masa Corporal (IMC) es una medida de asociación entre el peso y la talla de una persona. El IMC es usado como uno de 
+                    varios indicadores para evaluar el estado nutricional.
+                    <br>
+                    El IMC constituye la medida poblacional más útil del sobrepeso y la obesidad, pues la forma de calcularlo no varía en 
+                    función del sexo ni de la edad en la población adulta. No obstante, debe considerarse como una guía aproximativa, pues
+                    puede no corresponder al mismo grado de gordura en diferentes individuos.
+                    <br>
+                    La Organización Mundial de la Salud, ha propuesto una clasificación del estado nutricional dependiendo del IMC de una persona.
+                </p>
+                <br>
+                <!-- Inicio de calculos de indice de masa corporal-->
+                <article id="opcion_imc"></article>
+                    <button id="imc" class="btn btn-primary"> Calculadora de Indice de masa corporal </button>
+                    <div id="formularioimc" style="display: none;"><br>
+                        <label for="altura" style="width: 100px;">Altura:</label>
+                            <input type="number" id="altura" name="altura" min="0" style="width: 40px;" placeholder="100" oninput="validarAltura: 
+                            if (this.value > 1000 || this.value < 0) this.value = this.value.slice(0, this.value.length - 1);
+                            if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); "maxlength="4" required> cm.<br><br>
+                        <label for="peso" style="width: 100px;">Peso:</label>
+                            <input type="number" id="peso" name="peso" min="0" maxlength="3" style="width: 40px;" placeholder="0" oninput="validarPeso: 
+                            if (this.value > 1000 || this.value < 0) this.value = this.value.slice(0, this.value.length - 1);
+                            if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); "maxlength="4" required> kgs.<br><br>
+                        <button id="calcularimc" class="btn btn-outline-danger">Calcular IMC</button>
+                        <button id="reiniciarimc" class="btn btn-outline-success" style="float: right;" >Reiniciar</button><br><br>
+                        <h3 id="calculoimc" style="display: none"> Calculo de Masa</h3>
+                    </div>
+                </article>
+            <!-- Fin de calculos de indice de masa corporal-->
+            </div>
+            <!-- Fin Class Calculo de masa corporal la cual contiene los parrafos y el boton de "Calculadora de Indice de masa corporal"-->
+            <br>
+            <!-- Inicio Class Dietas y Rutinas sugeridas la cual contiene los parrafos y los botones de las dietas segun IMC"-->
+            <div class="calculodieta">
+                <h3>Dietas y Rutinas de acuerdo a tu indice de masa corporal</h3>
+                <p>
+                    Es importante tener en cuenta que no soy un profesional médico o nutricionista, por lo que te 
+                    recomiendo que consultes a un profesional de la salud antes de realizar cambios importantes en tu 
+                    dieta o estilo de vida. Sin embargo, puedo proporcionarte algunas pautas generales que podrían ser útiles
+                    para una dieta destinada a bajar de peso de manera saludable de acuerdo al rango que pertenezcas segun tu IMC.
+                </p>
+                <!-- Dietas y Rutinas sugeridas-->
+                <article id="opcion_dieta">
+                    <div class="rutinas">
+                        <div class="menor">
+                            <button id="menor" class="btn btn-primary "> Indice es menor a 18</button>
+                                <button id="rutinas1" class="btn btn-success" style="display: none;">Rutinas de Ejercicios </button>
+                                    <p id="menor_rutina" style="display: none;">
+                                        Si una persona tiene un Índice de Masa Corporal (IMC) menor a 18, significa que está bajo peso. 
+                                        <br>
+                                        Es importante abordar cualquier rutina de ejercicios con precaución y bajo la supervisión de un profesional 
+                                        de la salud, como un médico o un entrenador personal, para asegurarse de que el enfoque sea adecuado y seguro 
+                                        para el individuo en cuestión.
+                                        <br>
+                                        Dicho esto, el objetivo principal de la rutina de ejercicios en este caso sería promover el aumento de masa muscular y mejorar la fuerza, en lugar de centrarse en la pérdida de peso. Aquí hay una posible rutina que puede ser útil para una persona con bajo peso:
+                                        <br>
+                                        <b>Consideraciones previas:</b><br>
+                                        Antes de comenzar cualquier rutina de ejercicios, es esencial realizar una evaluación física y médica para
+                                        asegurarse de que la persona esté en condiciones de realizar actividad física. 
+                                        Asegúrate de tener en cuenta las preferencias y limitaciones individuales.
+                                        <br>
+                                        <b>Calentamiento:</b><br>
+                                        Comienza cada sesión con un calentamiento de 5-10 minutos, que puede incluir caminar, estirarse o hacer ejercicios de movilidad articular.
+                                        <br>
+                                        <b>Ejercicios de fortalecimiento:</b>
+                                        <br>
+                                        El enfoque principal estará en ejercicios de resistencia y fortalecimiento para aumentar la masa muscular y mejorar la fuerza. Aquí hay algunos ejemplos de ejercicios que se pueden incorporar:
+                                        <br>
+                                        <b>Levantamiento de pesas: </b>
+                                        <br>
+                                        Realiza ejercicios con mancuernas o barras, como el press de banca, levantamiento de hombros, sentadillas con peso, etc. Es importante comenzar con pesos ligeros y aumentar gradualmente a medida que se adquiere fuerza.
+                                        <br>
+                                        <b>Ejercicios con el propio peso corporal:</b>
+                                        <br>
+                                        Incluye ejercicios como flexiones, dominadas asistidas o con banda elástica, sentadillas sin peso, estocadas, entre otros.
+                                        <br>
+                                        <b>Ejercicios de resistencia:</b>
+                                        <br>
+                                        Utiliza bandas de resistencia o máquinas de cable para trabajar diferentes grupos musculares.
+                                        <br>
+                                        <b>Entrenamiento de fuerza funcional: </b>
+                                        <br>
+                                        Incorpora ejercicios que trabajen varios grupos musculares al mismo tiempo, como los burpees, kettlebell swings y ejercicios con balón medicinal.
+                                        <br>
+                                        <b>Cardio moderado:</b>
+                                        <br>
+                                        Incluye actividades de cardio moderado, como caminar, nadar o andar en bicicleta, para mejorar la resistencia cardiovascular. En este caso, no se busca quemar calorías, sino mejorar la salud cardiovascular.
+                                        <br>
+                                        <b>Flexibilidad:</b>
+                                        <br>
+                                        Después de cada sesión de ejercicios, dedica unos minutos a estirar los principales grupos musculares para mejorar la flexibilidad y reducir el riesgo de lesiones.
+                                        <br>
+                                        <b>Descanso:</b>
+                                        <br>
+                                        El descanso es fundamental para permitir que los músculos se recuperen y crezcan. Asegúrate de programar días de descanso entre las sesiones de entrenamiento y dormir lo suficiente para la recuperación.
+                                        <br>
+                                        <b>Nutrición:</b>
+                                        <br>
+                                        Recuerda que la nutrición juega un papel crucial en el aumento de masa muscular. Asegúrate de mantener una dieta equilibrada y rica en proteínas para apoyar el desarrollo muscular.
+                                        <br><br>
+                                        Una vez más, es importante destacar que esta rutina es solo una guía general. Cada persona es única y debe adaptar su rutina según sus necesidades individuales y bajo la supervisión adecuada. Siempre se recomienda consultar a un profesional de la salud o un entrenador antes de comenzar cualquier programa de ejercicios, especialmente si hay preocupaciones específicas relacionadas con el peso y la salud.
+                                        <br><br>
+                                        <button id="volveralmenu_rutinamenora18" class="btn btn-danger" style="float: left;">Subir</button>
+                                        <button id="volveralmenuprincipal_rutinamenora18" class="btn btn-success" style="float: right;">Menu Principal</button>
+                                    </p>
+                                <button id="dietas1" class="btn btn-success" style="display: none;">Dietas Sugeridas</button>
+                                    <p id="menor_dieta" style="display: none;">
+                                        Si tu Índice de Masa Corporal (IMC) es menor a 18, significa que te encuentras en la categoría de "bajo peso" o "bajo peso corporal".  <br>
+                                        Un IMC inferior a 18 indica que estás por debajo del rango considerado saludable para tu estatura y puede indicar que estás enfrentando un déficit de peso que podría afectar tu salud.
+                                        <br>
+                                        Es esencial abordar la situación con cuidado y buscar la orientación de un profesional de la salud, como un médico o un nutricionista, antes de realizar cambios importantes en tu dieta o estilo de vida.
+                                        <br>
+                                        Aquí hay algunas pautas generales que podrían aplicarse, pero recuerda que estas son solo sugerencias y que es vital obtener una evaluación personalizada:
+                                        <br>
+                                        <b>Consulta a un profesional:</b><br> Habla con un médico o un nutricionista para que puedan evaluar tu situación y determinar si realmente necesitas ganar peso y cuánto es necesario.
+                                        <br>
+                                        <b>Aumenta el consumo calórico:</b><br> Si es apropiado para tu situación, podrías necesitar consumir más calorías de las que estás quemando. Esto puede lograrse al aumentar el tamaño de las porciones o aumentar la frecuencia de las comidas y los refrigerios.
+                                        <br>
+                                        <b>Escoge alimentos nutritivos:</b><br> Asegúrate de que las calorías adicionales provengan de alimentos nutritivos y equilibrados. Prioriza alimentos ricos en proteínas, grasas saludables, carbohidratos complejos, vitaminas y minerales.
+                                        <br>
+                                        <b>Incluye proteínas:</b><br> Las proteínas son esenciales para el crecimiento y la reparación de los tejidos. Incorpora fuentes de proteínas magras, como carnes magras, pescado, huevos, productos lácteos bajos en grasa, nueces y legumbres.
+                                        <br>
+                                        <b>Come con frecuencia:</b><br> Puedes optar por comer cinco o seis comidas pequeñas al día en lugar de tres comidas grandes. Esto te ayudará a aumentar el consumo de calorías sin sentirte demasiado lleno en una sola comida.
+                                        <br>
+                                        <b>Evita alimentos vacíos en calorías:</b><br> Evita los alimentos altos en grasas saturadas, azúcares añadidos y calorías vacías, como los refrescos y las golosinas. En su lugar, enfócate en alimentos nutritivos.
+                                        <br>
+                                        <b>Hidratación:</b><br> No olvides beber suficiente agua durante el día. Aunque el agua no aporta calorías, es esencial para el funcionamiento adecuado del cuerpo.
+                                        <br><br>
+                                        Recuerda que cada persona es diferente y tiene necesidades nutricionales únicas. Un profesional de la salud podrá guiarte y crear un plan de dieta adecuado para tu situación particular. Además, también podrían investigar si hay alguna razón subyacente detrás de tu bajo peso, como problemas de salud o trastornos alimenticios, y abordar esos temas si es necesario.                            
+                                        <br><br>
+                                        <button id="volveralmenu_indicemenora18" class="btn btn-danger style="float: left;">Subir</button>
+                                        <button id="volveralmenuprincipal_indicemenora18" class="btn btn-success" style="float: right;">Menu Principal</button>
+                                    </p>
+                        </div><br>
+                        <div class="entre">
+                            <button id="entre" class="btn btn-primary"> Indice esta entre 18 y 25 </button>
+                                <button id="rutinas2" class="btn btn-success" style="display: none;">Rutinas de Ejercicios </button>
+                                    <p id="entre_rutina" style="display: none;">
+                                        Si tu índice de masa corporal (IMC) está entre 18 y 25, significa que te encuentras 
+                                        dentro de un rango de peso considerado saludable. <br> Felicitaciones por mantener un peso 
+                                        adecuado, ya que esto es un indicador positivo para la salud. 
+                                        <br>
+                                        A pesar de estar dentro de un rango saludable, es importante seguir manteniendo un estilo
+                                        de vida activo y saludable. Aquí te propongo una rutina de ejercicios equilibrada que puede
+                                        ayudarte a mantener tu bienestar físico y mental:
+                                        <br>
+                                        <b>Cardiovascular:</b><br>
+                                        Realiza ejercicios cardiovasculares de intensidad moderada durante al menos 150 minutos a la semana, o ejercicios cardiovasculares de alta intensidad durante 75 minutos a la semana. Puedes optar por caminar, correr, nadar, andar en bicicleta, hacer clases de baile, etc. Elige actividades que disfrutes para mantener la motivación.
+                                        <br>
+                                        <b>Entrenamiento de fuerza:</b><br>
+                                        Incluye ejercicios de resistencia para mantener y fortalecer tus músculos. Puedes utilizar pesas, máquinas de pesas, bandas elásticas o incluso ejercicios de peso corporal como flexiones, sentadillas y planchas. Realiza este tipo de entrenamiento al menos dos días a la semana.
+                                        <br>
+                                        <b>Flexibilidad y estiramientos:</b><br>
+                                        Realiza ejercicios de estiramiento para mejorar la flexibilidad y mantener una buena movilidad articular. Practica yoga o realiza estiramientos estáticos después de tus sesiones de entrenamiento.
+                                        <br>
+                                        <b>Descanso y recuperación:</b><br>
+                                        Asegúrate de darle a tu cuerpo tiempo suficiente para recuperarse después de los entrenamientos. El descanso adecuado es esencial para evitar lesiones y mejorar el rendimiento en futuras sesiones.
+                                        <br>
+                                        <b>Mantén una alimentación equilibrada:</b><br>
+                                        Acompaña tu rutina de ejercicios con una dieta equilibrada que incluya una variedad de alimentos nutritivos, como frutas, verduras, proteínas magras, granos enteros y grasas saludables. Bebe suficiente agua para mantener una hidratación adecuada.
+                                        <br>
+                                        <b>Escucha a tu cuerpo:</b><br>
+                                        Si sientes algún dolor o molestia durante los ejercicios, detente y consulta a un profesional de la salud si es necesario. No te exijas en exceso y adapta la intensidad de los ejercicios según tus capacidades y necesidades.
+                                        <br><br>
+                                        Recuerda que la clave está en la constancia y la adherencia a una rutina que disfrutes. Además del ejercicio físico, no olvides cuidar tu bienestar emocional y mental, durmiendo lo suficiente y buscando formas de manejar el estrés. Consultar a un profesional de la salud o un entrenador personal también puede ser útil para adaptar una rutina de ejercicios que se ajuste mejor a tus necesidades y objetivos individuales.                        
+                                        <br><br>
+                                        <button id="volveralmenu_rutinaentre18y25" class="btn btn-danger" style="float: left;">Subir</button>
+                                        <button id="volveralmenuprincipal_rutinaentre18y25" class="btn btn-success" style="float: right;">Menu Principal</button>
+                                    </p>
+                                <button id="dietas2" class="btn btn-success" style="display: none;">Dietas sugeridas</button>
+                                    <p id="entre_dieta" style="display: none;">
+                                        Si tu Índice de Masa Corporal (IMC) se encuentra entre 18 y 25, esto indica que tienes un peso considerado dentro del rango normal o saludable. <br>
+                                        En esta situación, no es necesario seguir una dieta para bajar de peso, ya que tu peso actual es adecuado para tu altura.
+                                        <br>
+                                        Sin embargo, es importante recordar que el IMC es solo una medida aproximada y no tiene en cuenta otros factores importantes como la composición corporal y la distribución de grasa. Si estás interesado en mejorar tu salud y bienestar general, puedes considerar adoptar una alimentación equilibrada y un estilo de vida saludable. Aquí hay algunos consejos que pueden ayudarte:
+                                        <br>
+                                        <b>Alimentación equilibrada:</b><br> Consume una dieta rica en frutas, verduras, granos enteros, proteínas magras y grasas saludables. Trata de evitar el exceso de alimentos procesados, azúcares refinados y grasas saturadas.
+                                        <br>
+                                        <b>Tamaño de las porciones:</b><br> Presta atención al tamaño de las porciones que consumes. Comer en exceso, incluso alimentos saludables, puede llevar a un aumento de peso no deseado.
+                                        <br>
+                                        <b>Hidratación:</b><br> Bebe suficiente agua durante el día para mantener una buena hidratación.
+                                        <br>
+                                        <b>Actividad física:</b><br> Incorpora una rutina regular de ejercicio físico en tu vida. Esto no solo puede ayudarte a mantener un peso saludable, sino que también proporciona muchos beneficios para la salud en general.
+                                        <br>
+                                        <b>Descanso adecuado:</b><br> Asegúrate de dormir lo suficiente, ya que el sueño juega un papel importante en la salud y el metabolismo.
+                                        <br>
+                                        Evita el consumo excesivo de alcohol y tabaco.
+                                        <br><br>
+                                        Recuerda que siempre es una buena idea consultar con un profesional de la salud o un nutricionista antes de hacer cambios significativos en tu dieta o estilo de vida. Cada persona es única y puede tener necesidades específicas que deben ser consideradas de manera individual.
+                                        <br><br>
+                                        <button id="volveralmenu_indiceentre18y25" class="btn btn-danger" style="float: left;">Subir</button>
+                                        <button id="volveralmenuprincipal_indiceentre18y25" class="btn btn-success" style="float: right;">Menu Principal</button>
+                                    </p>
+                        </div><br>
+                        <div class="mayor">
+                            <button id="mayor" class="btn btn-primary "> Indice esta entre 25 y 29 </button>
+                                <button id="rutinas3" class="btn btn-success" style="display: none;">Rutinas de Ejercicios </button>
+                                    <p id="mayor_rutina" style="display: none;">
+                                        Si tu Índice de Masa Corporal (IMC) está entre 25 y 29, eso indica que tienes sobrepeso. <br>
+                                        Es importante recordar que antes de comenzar cualquier rutina de ejercicios o cambio en tu estilo 
+                                        de vida, es recomendable consultar a un profesional de la salud, como un médico o un entrenador 
+                                        personal, para asegurarte de que estás eligiendo la mejor opción para tu situación y condición física.
+                                        <br>
+                                        En general, una rutina de ejercicios adecuada para personas con sobrepeso puede incluir una combinación de ejercicios cardiovasculares, entrenamiento de fuerza y flexibilidad. Aquí te presento una rutina de ejercicios básica, pero recuerda que siempre es mejor adaptarla a tus necesidades y capacidades individuales:
+                                        <br>
+                                        <b>Calentamiento:</b><br> Comienza con 5 a 10 minutos de calentamiento para preparar tu cuerpo para el ejercicio. Puedes hacer caminatas rápidas, ejercicios de movilidad articular y estiramientos ligeros.
+                                        <br>
+                                        <b>Ejercicios cardiovasculares:</b><br> Los ejercicios cardiovasculares te ayudarán a quemar calorías y mejorar tu salud cardiovascular. Puedes elegir actividades de bajo impacto para reducir el estrés en las articulaciones, como caminar, nadar, montar en bicicleta estática o elíptica. Comienza con 20-30 minutos, 3-5 veces por semana, e intenta aumentar gradualmente la duración y la intensidad.
+                                        <br>
+                                        <b>Entrenamiento de fuerza:</b><br> El entrenamiento de fuerza te ayudará a desarrollar masa muscular, lo que puede mejorar tu metabolismo y facilitar la pérdida de peso. Comienza con ejercicios que utilicen tu propio peso corporal, como sentadillas, flexiones de rodillas o ejercicios con bandas de resistencia. Realiza 2-3 sesiones de entrenamiento de fuerza por semana, dejando un día de descanso entre cada sesión.
+                                        <br>
+                                        <b>Flexibilidad:</b><br> Trabaja en mejorar tu flexibilidad y rango de movimiento. Los estiramientos pueden ayudarte a prevenir lesiones y mejorar tu postura. Dedica unos 10 minutos al final de cada sesión de ejercicio para estirar los principales grupos musculares.
+                                        <br>
+                                        <b>Moderación y progreso:</b><br> Escucha a tu cuerpo y no te exijas demasiado al principio. Es importante progresar gradualmente y permitir que tu cuerpo se adapte al aumento de la actividad física.
+                                        <br>
+                                        <b>Descanso y recuperación:</b><br> Asegúrate de incluir días de descanso en tu rutina para permitir que tu cuerpo se recupere. El descanso es esencial para evitar lesiones y mejorar el rendimiento.
+                                        <br><br>
+                                        Recuerda que la pérdida de peso y la mejora de la salud requieren un enfoque integral, que incluye no solo el ejercicio, sino también una dieta balanceada y saludable. Bebe suficiente agua, come alimentos nutritivos y evita el exceso de alimentos procesados y altos en calorías.
+                                        
+                                        Nuevamente, antes de comenzar cualquier programa de ejercicios, es aconsejable buscar la orientación de un profesional de la salud que pueda adaptar la rutina a tus necesidades específicas y garantizar que estés realizando los ejercicios de manera segura y efectiva.
+                                        <br><br>
+                                        <button id="volveralmenu_rutinaentre25y29" class="btn btn-danger" style="float: left;">Subir</button>
+                                        <button id="volveralmenuprincipal_rutinaentre25y29" class="btn btn-success" style="float: right;">Menu Principal</button>
+                                    </p>
+                                <button id="dietas3" class="btn btn-success" style="display: none;">Dietas sugeridas</button>
+                                    <p id="mayor_dieta" style="display: none;">
+                                        Si tu índice de masa corporal (IMC) está entre 25 y 29, significa que te encuentras en la categoría de "sobrepeso". <br>
+                                        El IMC es una medida que relaciona tu peso y estatura para evaluar si tienes un peso saludable en función de tu altura. Aunque el IMC es una herramienta útil, no tiene en cuenta otros factores importantes como la composición corporal o la distribución de la grasa.
+                                        <br>
+                                        Si te encuentras en esta categoría, es recomendable que consideres adoptar una dieta equilibrada y un estilo de vida saludable para reducir el riesgo de problemas de salud relacionados con el sobrepeso, como enfermedades cardíacas, diabetes tipo 2 y presión arterial alta.
+                                        <br>
+                                        Aquí tienes algunas pautas generales que podrían ayudarte:
+                                        <br>
+                                        <b>Consulta a un profesional de la salud:</b><br> Antes de realizar cambios significativos en tu dieta, es recomendable que consultes a un médico o un nutricionista para que puedan proporcionarte recomendaciones personalizadas y seguras.
+                                        <br>
+                                        <b>Controla las porciones:</b><br> Asegúrate de no comer en exceso y trata de mantener porciones adecuadas para tus necesidades individuales.
+                                        <br>
+                                        <b>Consume una dieta equilibrada:</b><br> Prioriza alimentos ricos en nutrientes, como frutas, verduras, granos integrales, proteínas magras y grasas saludables.
+                                        <br>
+                                        <b>Reduce el consumo de alimentos procesados y azúcares añadidos:</b><br> Estos alimentos pueden contribuir al aumento de peso y afectar negativamente la salud general.
+                                        <br>
+                                        <b>Bebe suficiente agua:</b><br> Mantente hidratado y evita el consumo excesivo de bebidas azucaradas o alcohólicas.
+                                        <br>
+                                        <b>Realiza actividad física:</b><br> Además de una dieta adecuada, es fundamental incorporar actividad física regular en tu rutina. Esto puede incluir caminar, correr, nadar, andar en bicicleta u otras formas de ejercicio que disfrutes.
+                                        <br><br>
+                                        Recuerda que cada persona es diferente y lo que funciona para alguien puede no ser adecuado para otra persona. La clave está en adoptar cambios sostenibles y saludables en tu estilo de vida a largo plazo en lugar de recurrir a dietas restrictivas o extremas. Siempre es mejor buscar el asesoramiento de un profesional para obtener una guía personalizada y segura para lograr tus objetivos de salud.                                
+                                        <br><br>
+                                        <button id="volveralmenu_indiceentre25y29" class="btn btn-danger" style="float: left;">Subir</button>
+                                        <button id="volveralmenuprincipal_indiceentre25y29" class="btn btn-success" style="float: right;">Menu Principal</button>
+                                    </p>
+                        </div><br>
+                        <div class="excedido">
+                            <button id="excedido" class="btn btn-primary"> Indice es mayor 29 </button>
+                                <button id="rutinas4" class="btn btn-success" style="display: none;">Rutinas de Ejercicios </button>
+                                    <p id="excedido_rutina" style="display: none;">
+                                        Si tu índice de masa corporal (IMC) es mayor a 29, esto indica que tienes sobrepeso o incluso obesidad, dependiendo del valor exacto. <br>
+                                        Es importante recordar que el IMC es solo una medida aproximada y no tiene en cuenta la composición corporal completa, pero sí puede ser un indicador de posibles problemas de salud relacionados con el peso.
+                                        <br>
+                                        Antes de comenzar cualquier rutina de ejercicios, es crucial que consultes a un profesional de la salud, como un médico o un entrenador personal, para asegurarte de que estás en condiciones de realizar actividad física y para recibir orientación personalizada.
+                                        <br>
+                                        Si ya has sido evaluado por un profesional y se te ha dado el visto bueno para hacer ejercicio, aquí te presento una rutina de ejercicios básica que puede ser útil para ayudarte a alcanzar tus objetivos de pérdida de peso y mejorar tu salud cardiovascular. Recuerda que esta rutina es solo una guía y es posible que necesites ajustarla según tu nivel de condición física y preferencias personales.
+                                        <br>
+                                        <b>Día 1: Entrenamiento cardiovascular</b><br>                            
+                                        Calentamiento: 5-10 minutos de caminata ligera o trote suave.
+                                        Ejercicio principal: 30-45 minutos de actividad cardiovascular moderada, como caminar rápido, correr, andar en bicicleta, nadar o utilizar una máquina elíptica.
+                                        Enfriamiento: 5-10 minutos de estiramientos suaves. <br>
+                                        <b>Día 2: Entrenamiento de fuerza</b><br>
+                                        Calentamiento: 5-10 minutos de actividad cardiovascular ligera.
+                                        Ejercicio principal: Realiza una serie de ejercicios de fuerza que trabajen diferentes grupos musculares, como sentadillas, flexiones de brazos, levantamiento de pesas (si es apropiado para ti), zancadas, press de hombros, entre otros. Realiza 3 series de 10-12 repeticiones por ejercicio.
+                                        Enfriamiento: 5-10 minutos de estiramientos para los músculos trabajados. <br>
+                                        <b>Día 3: Descanso activo o actividad de baja intensidad</b>  <br>
+                                        Puedes optar por realizar una actividad de baja intensidad, como yoga, tai chi o un paseo suave. El objetivo es mantenerse activo sin ejercer demasiada presión sobre el cuerpo. <br>
+                                        <b>Día 4: Entrenamiento cardiovascular </b><br>
+                                        Realiza una sesión similar al "Día 1". <br>
+                                        <b>Día 5: Entrenamiento de fuerza </b><br>
+                                        Realiza una sesión similar al "Día 2". <br>
+                                        <b>Día 6 y 7: Descanso o actividad suave</b> <br>
+                                        Descansa o realiza actividades de baja intensidad para permitir que tu cuerpo se recupere.
+                                        Recuerda que la pérdida de peso y la mejora de la salud requieren un enfoque integral, que incluye tanto la dieta como el ejercicio. Es esencial mantener una alimentación equilibrada y saludable para complementar tus esfuerzos de ejercicio.
+                                        <br><br>
+                                        Siempre escucha a tu cuerpo, evita el sobreentrenamiento y modifica la rutina según sea necesario. También, busca el apoyo de un profesional para recibir orientación y seguimiento adecuados en tu proceso de pérdida de peso y mejora de la salud.                        
+                                        <br><br>
+                                        <button id="volveralmenu_rutinamayora29" class="btn btn-danger" style="float: left;">Subir</button>
+                                        <button id="volveralmenuprincipal_rutinamayora29" class="btn btn-success" style="float: right;">Menu Principal</button>
+                                    </p>
+                                <button id="dietas4" class="btn btn-success" style="display: none;">Dietas sugeridas</button>
+                                    <p id="excedido_dieta" style="display: none;">
+                                    Si tu Índice de Masa Corporal (IMC) es mayor a 29, se considera que tienes obesidad. <br>
+                                    En este caso, es importante tomar medidas para mejorar tu salud y reducir el riesgo de enfermedades asociadas con el exceso de peso. Una dieta adecuada puede ser parte de un enfoque integral para perder peso y mantenerlo en un nivel saludable.
+                                    <br>
+                                    Es esencial consultar a un profesional de la salud, como un médico o un nutricionista, para obtener una evaluación personalizada y un plan de dieta adecuado para tu situación particular. Sin embargo, a continuación, se presentan algunas pautas generales que pueden ser útiles:
+                                    <br>
+                                    <b>Reducción de calorías:</b><br> Para perder peso, es necesario crear un déficit de calorías, lo que significa consumir menos calorías de las que quemas. Sin embargo, este déficit debe ser equilibrado y no muy extremo para asegurar que recibas suficientes nutrientes esenciales.
+                                    <br>
+                                    <b>Elección de alimentos saludables:</b><br> Prioriza alimentos ricos en nutrientes, como frutas, verduras, proteínas magras (pescado, pollo, pavo, legumbres), granos enteros y productos lácteos bajos en grasa. Evita alimentos procesados, altos en grasas saturadas, azúcares añadidos y sal.
+                                    <br>
+                                    <b>Control de las porciones:</b><br> Aprende a controlar las porciones y evita comer en exceso. El tamaño de las porciones en muchos restaurantes y comidas preparadas suele ser más grande de lo necesario.
+                                    <br>
+                                    <b>Comer con regularidad:</b><br> No te saltes comidas, especialmente el desayuno. Comer de manera regular puede ayudar a mantener el metabolismo activo y reducir el hambre excesiva.
+                                    <br>
+                                    <b>Hidratación:</b><br> Bebe suficiente agua durante el día para mantenerse hidratado. A veces, la sed puede confundirse con hambre.
+                                    <br>
+                                    <b>Ejercicio:</b><br> Complementa tu dieta con actividad física regular. El ejercicio te ayuda a quemar calorías y mejorar tu salud en general.
+                                    <br>
+                                    <b>Evita las dietas extremadamente restrictivas:</b><br> Las dietas de moda o muy restrictivas pueden ser insostenibles a largo plazo y no proporcionar todos los nutrientes que necesitas.
+                                    <br><br>
+                                    Recuerda que cada persona es diferente, y lo que funcione para una persona puede no ser adecuado para otra. Un enfoque individualizado y supervisado por un profesional de la salud es fundamental para asegurar que la dieta sea segura y efectiva para ti.
+                                    <br>
+                                    Además, tener en cuenta otros factores de estilo de vida, como el estrés, el sueño y las actividades diarias, también puede ser importante para abordar el exceso de peso de manera integral.                                
+                                    <br><br>
+                                    <button id="volveralmenu_indicemayora29" class="btn btn-danger" style="float: left;">Subir</button>
+                                    <button id="volveralmenuprincipal_indicemayora29" class="btn btn-success" style="float: right;">Menu Principal</button>
+                                   </p>
+                        </div><br>
+                    </div>
+                </article>
+                <!-- Fin de Dietas y Rutinas sugeridas-->
+        </div>
+            <!-- Fin Class Dietas y Rutinas sugeridas la cual contiene los parrafos y los botones de las dietas segun IMC"-->
+        </main>
+    </div>  
+    <footer>
+            <p> © 2023 MaxiDesign ® | Todos los derechos reservados </p>
+    </footer>
+    <!-- Java Script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <!-- Sweet Alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Anime JS -->
+    <script src="  https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.js" ></script> 
+    <!-- archvivo para calculos -->
+    <script src="../js/calculos.js"></script>
+    <!-- archivo para dietas y rutinas sugeridas-->
+    <script src="../js/dietas.js"></script>
+</body>
+</html>
